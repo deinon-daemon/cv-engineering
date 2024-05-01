@@ -40,6 +40,14 @@
 					<span class="nav-menu-item-label">{item.title}</span>
 				</a>
 			{/each}
+			<a
+				href="https://www.instagram.com/sans.honte.press?igsh=MTRnZjRobW80Y3g0Zw%3D%3D&utm_source=qr"
+				class="nav-menu-item !text-[var(--secondary-text)]"
+				target="_blank"
+			>
+				<UIcon icon="i-carbon-aperture" classes="text-1.3em" />
+				<span class="nav-menu-item-label">Instagram</span>
+			</a>
 		</div>
 		<div class="flex flex-row self-stretch items-stretch gap-1 text-1.15em">
 			<a
