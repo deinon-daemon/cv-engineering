@@ -15,7 +15,7 @@ const config = {
 	},
 
 	kit: {
-		adapter: adapter({ fallback: '404.html' }),
+		adapter: adapter({ fallback: '404.html', pages: 'public' }),
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? base : ''
 		},
