@@ -44,7 +44,7 @@ export const getPlatfromIcon = (platform: Platform): Icons => {
 export const HOME: HomePageParams = {
 	name: 'Sans Honte Press',
 	title: 'Sans Honte Press',
-	welcome: '/shamelessness/',
+	welcome: '/shameless/',
 	description:
 		"live coverage of proletarian action, unfiltered photojournalism, and commentary that aims to castrate the State's shameless abuse of power.",
 	links: [
