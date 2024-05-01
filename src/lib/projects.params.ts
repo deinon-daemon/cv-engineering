@@ -9,13 +9,13 @@ const MY_PROJECTS: Array<Project> = [
 			'Ongoing coverage of Mass Arrests, Student Resistance, and the extreme measures the US Government & Universities will take to squash all critique of their complicity with the Palestinian Genocide.',
 		shortDescription:
 			'Ongoing coverage of Mass Arrests, Student Resistance, and the extreme measures the US Government & Universities will take to squash all critique of their complicity with the Palestinian Genocide.',
-		links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
+		links: [],
 		logo: Assets.Unknown,
-		name: 'Slick Portfolio',
+		name: 'Student Intifada NYC 2024',
 		period: {
 			from: new Date()
 		},
-		type: 'Website Template'
+		type: 'Mass Arrest Documentary Footage'
 	},
 	{
 		slug: 'chaz-seattle-2020',
