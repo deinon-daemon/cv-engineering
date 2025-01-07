@@ -1,26 +1,28 @@
 <script lang="ts">
+	import { title } from '@data/search';
+	import { filterItemsByQuery, type ItemOrSkill } from '$lib/utils/helpers';
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
-	import { SEARCH } from '$lib/params';
+	import * as experiences from '@data/experience';
+	import * as projects from '@data/projects';
+	import * as skills from '@data/skills';
+
+	import type { Icon, Item, Skill } from '$lib/types';
+
 	import SearchPage from '$lib/components/SearchPage.svelte';
-	import MY_EXPERIENCES from '$lib/experiences.params';
-	import MY_PROJECTS from '$lib/projects.params';
-	import MY_SKILLS from '$lib/skills.params';
 	import Chip from '$lib/components/Chip/Chip.svelte';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
 
-	const { title } = SEARCH;
-
-	type Item<T = unknown> = {
-		icon: string;
+	type SearchResultItem = {
+		icon: Icon;
 		name: string;
-		data: T;
+		data: Item | Skill;
 		to: string;
 	};
 
 	let query = '';
 	let mounted = false;
-	let result: Array<Item> = [];
+	let result: Array<SearchResultItem> = [];
 
 	onMount(() => {
 		let searchParams = new URLSearchParams(window.location.search);
@@ -34,33 +36,28 @@
 
 		// filter
 		result.push(
-			...MY_PROJECTS.filter((item) => query && item.name.toLowerCase().includes(query)).map<Item>(
-				(data) => ({
-					data,
-					icon: 'i-carbon-cube',
-					name: data.name,
-					to: `projects/${data.slug}`
-				})
-			)
+			...filterItemsByQuery(projects.items, query).map<SearchResultItem>((data) => ({
+				data,
+				icon: 'i-carbon-cube',
+				name: data.name,
+				to: `projects/${data.slug}`
+			}))
 		);
 
 		result.push(
-			...MY_SKILLS.filter((item) => query && item.name.toLowerCase().includes(query)).map<Item>(
-				(data) => ({
-					data,
-					icon: 'i-carbon-software-resource-cluster',
-					name: data.name,
-					to: `skills/${data.slug}`
-				})
-			)
+			...filterItemsByQuery(
+				skills.items as unknown as Array<ItemOrSkill>,
+				query
+			).map<SearchResultItem>((data) => ({
+				data,
+				icon: 'i-carbon-software-resource-cluster',
+				name: data.name,
+				to: `skills/${data.slug}`
+			}))
 		);
 
 		result.push(
-			...MY_EXPERIENCES.filter(
-				(item) =>
-					query &&
-					(item.name.toLowerCase().includes(query) || item.company.toLowerCase().includes(query))
-			).map<Item>((data) => ({
+			...filterItemsByQuery(experiences.items, query).map<SearchResultItem>((data) => ({
 				data,
 				icon: 'i-carbon-development',
 				name: `${data.name} @ ${data.company}`,

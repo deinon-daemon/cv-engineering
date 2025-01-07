@@ -1,3 +1,5 @@
+import type { Color } from './utils/colors';
+
 export enum Platform {
 	GitHub = 'github',
 	StackOverflow = 'stackoverflow',
@@ -7,6 +9,8 @@ export enum Platform {
 	Facebook = 'facebook',
 	Youtube = 'youtube'
 }
+
+export type Icon = `i-${string}-${string}`;
 
 export enum ContractType {
 	FullTime = 'Full-time',
@@ -19,8 +23,8 @@ export enum ContractType {
 
 export type Asset = string | { light: string; dark: string };
 
-export interface Item {
-	slug: string;
+export interface Item<S extends string = string> {
+	slug: S;
 	name: string;
 	logo: Asset;
 	shortDescription: string;
@@ -38,55 +42,40 @@ export interface IconLink extends Link {
 	icon: Asset;
 }
 
-export interface Skill extends Omit<Item, 'shortDescription'> {
-	color: string;
+export interface SkillCategory<S extends string = string> {
+	slug: S;
+	name: string;
 }
 
-export interface Project extends Item {
-	links: Array<Link>;
+export interface Skill<S extends string = string> extends Omit<Item<S>, 'shortDescription'> {
 	color: string;
+	category?: SkillCategory;
+}
+
+export interface Project<S extends string = string> extends Item<S> {
+	links: Array<Link>;
+	color: Color;
 	period: {
 		from: Date;
 		to?: Date;
 	};
 	type: string;
+	skills: Array<Skill<S>>;
 }
 
-export interface Experience extends Project {
-
-	role: string;
+export interface Experience<S extends string = string> extends Project<S> {
+	company: string;
 	location: string;
+	contract: ContractType;
 }
 
-export interface PageParams {
-	title: string;
-}
-
-export interface PageWithSearchParams<T> extends PageParams {
-	items: Array<T>;
-}
-
-export interface HomeLink {
-	platform: Platform;
-	link: string;
-}
-
-export interface HomePageParams extends PageParams {
-	name:string;
-	welcome: string;
-	description: string;
-	links: Array<HomeLink>;
-	skills?: Array<Skill>;
-}
-
-export type SearchPageParams = PageParams;
-
-export type ProjectPageParams = PageWithSearchParams<Project>;
-
-export type ExperiencePageParams = PageWithSearchParams<Experience>;
-
-export type SkillsPageParams = PageWithSearchParams<Skill>;
-
-export interface ResumePageParams extends PageParams {
-	item: string;
+export interface Education<S extends string = string> extends Item<S> {
+	organization: string;
+	location: string;
+	period: {
+		from: Date;
+		to?: Date;
+	};
+	subjects: Array<string>;
+	degree: string;
 }

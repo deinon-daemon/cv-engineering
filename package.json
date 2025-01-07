@@ -1,13 +1,15 @@
 {
-	"name": "deinon-daemon-svelte-artigoh",
+	"name": "riadh-adrani",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build --outDir public",
+		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
 		"@iconify-json/carbon": "^1.1.21",
@@ -26,9 +28,13 @@
 		"@unocss/svelte-scoped": "^0.56.1",
 		"dompurify": "^3.0.5",
 		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte3": "^4.0.0",
 		"marked": "^5.1.1",
 		"marked-gfm-heading-id": "^3.0.4",
 		"marked-mangle": "^1.1.0",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
 		"prismjs": "^1.29.0",
 		"sass": "^1.57.1",
 		"slugify": "^1.6.6",
@@ -37,11 +43,10 @@
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
 		"unocss": "^0.56.1",
-		"vite": "*"
+		"vite": "^4.0.0"
 	},
 	"type": "module",
 	"dependencies": {
-		"dayjs": "^1.11.10",
-		"esbuild": "^0.19.12"
+		"dayjs": "^1.11.10"
 	}
 }

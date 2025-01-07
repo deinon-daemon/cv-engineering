@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
 	--dark-0: #000;
+	--dark-00: #3b3b3b;
 	--dark-1: #1e1e1e;
 	--dark-2: #2e2e2e;
 	--dark-3: #3e3e3e;
@@ -14,6 +17,7 @@
 	--dark-8: #8e8e8e;
 
 	--light-0: #fff;
+	--light-00: #cacaca;
 	--light-1: #e1e1e1;
 	--light-2: #d1d1d1;
 	--light-3: #c1c1c1;
@@ -28,7 +32,6 @@
 
 	--code-string-light: #297a3a;
 	--code-string-dark: #62c073;
-	--dialog-prompt: #018519;
 
 	--code-function-light: #0068d6;
 	--code-function-dark: #52a8ff;
@@ -66,6 +69,7 @@ body {
 	color-scheme: dark;
 
 	--main: var(--dark-0);
+	--main-close: var(--dark-00);
 	--main-hover: var(--dark-1);
 	--secondary: var(--dark-1);
 	--secondary-hover: var(--dark-2);
@@ -93,7 +97,6 @@ body {
 	--code-function: var(--code-function-dark);
 	--code-constant: var(--code-constant-dark);
 	--code-operator: var(--code-operator-dark);
-	--dialog-prompt: var(--dialog-prompt);
 	--link: var(--link-light);
 }
 
@@ -101,6 +104,7 @@ body {
 	color-scheme: light;
 
 	--main: var(--light-0);
+	--main-close: var(--light-00);
 	--main-hover: var(--light-1);
 	--secondary: var(--light-1);
 	--secondary-hover: var(--light-2);
@@ -128,7 +132,6 @@ body {
 	--code-function: var(--code-function-light);
 	--code-constant: var(--code-constant-light);
 	--code-operator: var(--code-operator-light);
-	--dialog-prompt: var(--dialog-prompt);
 	--link: var(--link-dark);
 }
 
@@ -161,6 +164,9 @@ body {
 	--code-number: var(--secondary-text);
 	--code-interpolation: var(--code-keyword);
 	--code-class-name: var(--secondary-text);
+
+	font-family: 'Space Mono', monospace;
+	font-size: 14px;
 
 	color: var(--tertiary-text);
 	overflow-y: auto !important;
@@ -233,7 +239,27 @@ body {
 	}
 
 	& h1 {
-		font-size: 2.25em;
+		font-size: 2em;
+	}
+
+	& h2 {
+		font-size: 1.8em;
+	}
+
+	& h3 {
+		font-size: 1.6em;
+	}
+
+	& h4 {
+		font-size: 1.45em;
+	}
+
+	& h5 {
+		font-size: 1.3em;
+	}
+
+	& h6 {
+		font-size: 1.2em;
 	}
 
 	& p {
@@ -257,14 +283,14 @@ body {
 	& :is(code):not(pre code) {
 		color: var(--accent-text);
 		// font-size: 0.9em;
-		background-color: var(--secondary);
+		background-color: var(--tertiary);
 		padding: 1px 6px;
 		border-radius: 0.25em;
 	}
 
 	& :not(pre) > code[class*='language-'],
 	pre[class*='language-'] {
-		background-color: var(--secondary);
+		background-color: var(--main-hover);
 		border: 1px solid var(--border);
 		border-radius: 0.25em;
 		font-size: 0.9em;
@@ -281,8 +307,8 @@ body {
 
 	& blockquote {
 		padding: 5px 20px;
-		background-color: var(--secondary);
-		border: 1px solid var(--dividerLight1);
+		background-color: var(--main-hover);
+		border: 1px solid var(--dividerLight);
 		margin-right: 0px;
 		margin-left: 0px;
 		border-radius: 0.25em;
@@ -293,9 +319,49 @@ body {
 	}
 
 	& hr {
-		border: none;
-		border-top: 1px solid var(--border-low);
+		// border: none;
+		border-top: 0.5px solid var(--border-low);
 		color: var(--border-low);
 		margin: 30px 0px;
+	}
+}
+
+.nav-bar-mobile-btn {
+	width: 36px;
+	height: 36px;
+
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		height: 1px;
+		width: 20px;
+		background-color: var(--secondary-text);
+		transition: transform 200ms ease;
+	}
+
+	&:hover {
+		&::before,
+		&::after {
+			background-color: auto;
+		}
+	}
+
+	&::before {
+		transform: translateY(-5px) rotate(0deg);
+	}
+
+	&::after {
+		transform: translateY(4px) rotate(0deg);
+	}
+
+	&-expanded {
+		&::before {
+			transform: translateY(2px) rotate(45deg);
+		}
+
+		&::after {
+			transform: translateY(0) rotate(-45deg);
+		}
 	}
 }
