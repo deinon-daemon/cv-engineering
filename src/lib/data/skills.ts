@@ -96,6 +96,14 @@ export const items = [
 		logo: Assets.Svelte,
 		name: 'Svelte',
 		category: 'library'
+	}),
+	defineSkill({
+		slug: 'rust',
+		color: 'red',
+		description: 'rust',
+		logo: Assets.Rust,
+		name: 'Rust',
+		category: 'pro-lang'
 	})
 ] as const;
 
