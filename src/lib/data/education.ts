@@ -3,7 +3,7 @@ import type { Education } from '../types';
 
 export const items: Array<Education> = [
 	{
-		degree: 'Bachelor degree of Computer Science',
+		degree: 'Honors Bachelor of Linguistics',
 		description: '',
 		location: 'Tunisia',
 		logo: Assets.Unknown,
@@ -12,10 +12,20 @@ export const items: Array<Education> = [
 		period: { from: new Date(2020, 0, 1), to: new Date(2022, 5, 1) },
 		shortDescription: '',
 		slug: 'dummy-education-item',
-		subjects: ['C', 'Algorithm', 'Algebra', 'Python', 'C++', 'Java', 'English']
+		subjects: [
+			'Cognitive & Computational Linguistics',
+			'Language Documentation',
+			'Acoustic Phonetics',
+			'Python',
+			'C',
+			'Java',
+			'French',
+			'Wolof',
+			''
+		]
 	},
 	{
-		degree: 'PhD of Computer Science',
+		degree: 'Workplace Mentorship, Professional Development',
 		description: '',
 		location: 'USA',
 		logo: Assets.Unknown,

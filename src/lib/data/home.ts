@@ -1,11 +1,11 @@
 import { Platform } from '$lib/types';
 import { getSkills } from './skills';
 
-export const title = 'Home';
+export const title = 'Benjamin Carsley - Fullstack Application Builder, Cloud DevOps Specialist, ML Engineer';
 
-export const name = 'Name';
+export const name = 'Benjamin';
 
-export const lastName = 'LastName';
+export const lastName = 'Carsley';
 
 export const description =
 	'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, rerum. Debitis accusantium deleniti enim iste dignissimos? Similique, exercitationem! Odit vero, numquam quae ratione maxime sunt reiciendis laudantium quaerat iure ipsum!';
@@ -26,7 +26,7 @@ export const links: Array<{ platform: Platform; link: string }> = [
 	},
 	{
 		platform: Platform.Email,
-		link: 'riadh_adrani@hotmail.fr'
+		link: 'deinon.daemon@gmail.com'
 	},
 	{
 		platform: Platform.Youtube,
