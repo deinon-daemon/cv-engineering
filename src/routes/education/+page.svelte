@@ -67,7 +67,9 @@
 									<CardDivider />
 									<div class="row items-center gap-2">
 										<UIcon icon="i-carbon-location" />
-										{education.location}
+										{#each education.location as loc}
+											<Chip>{loc}</Chip>
+										{/each}
 									</div>
 									<CardDivider />
 									<div class="row items-center gap-2">

@@ -71,7 +71,7 @@ export interface Experience<S extends string = string> extends Project<S> {
 
 export interface Education<S extends string = string> extends Item<S> {
 	organization: string;
-	location: string;
+	location: Array<string>;
 	period: {
 		from: Date;
 		to?: Date;
