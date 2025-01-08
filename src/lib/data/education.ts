@@ -4,10 +4,11 @@ import type { Education } from '../types';
 export const items: Array<Education> = [
 	{
 		degree: 'Honors Bachelor of Arts in Linguistics',
+		color: 'blue',
 		description:
 			'Columbia University Linguistics, Honors Thesis on Language Documentation and Revitalization of txʷəlšucid and other Coastal Salish Languages',
 		location: ['New York City, NY', 'Seattle, WA'],
-		logo: Assets.Unknown,
+		logo: Assets.Columbia,
 		name: 'BA of Linguistics, Columbia University',
 		organization: 'Columbia College, Columbia University',
 		period: { from: new Date(2020, 5, 1), to: new Date(2022, 5, 1) },
@@ -29,10 +30,11 @@ export const items: Array<Education> = [
 	},
 	{
 		degree: 'Founding Engineer, Autodidacticism, On the Job Mentorship',
+		color: 'red',
 		description:
 			"Worked directly with Founder, Pava LaPere, to design and develop multiple fullstack applications by myself, and moreover, to establish and architect the organization's GitHub & Google Cloud Infrastructure",
 		location: ['New York City, NY', 'Baltimore, MD'],
-		logo: Assets.Unknown,
+		logo: Assets.EcoMap,
 		name: 'Founding Engineer, Autodidact in Cloud Software Engineering',
 		organization: 'EcoMap Technologies',
 		period: { from: new Date(2022, 5, 1), to: new Date(2024, 11, 31) },
@@ -68,9 +70,10 @@ export const items: Array<Education> = [
 	},
 	{
 		degree: 'Freelance Web Developer, ML Engineering & Linguistic Consultancy',
+		color: 'aquamarine',
 		description: '',
 		location: ['New York City, NY'],
-		logo: Assets.Unknown,
+		logo: Assets.deinon,
 		name: 'Freelance Web Developer, ML Engineering & Linguistic Consultancy',
 		organization: '',
 		period: { from: new Date(2023, 1) },

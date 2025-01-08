@@ -14,6 +14,12 @@
 
 	let result: Array<Education> = items;
 
+	function isSubstring(someString: string, stringToMatch: string) {
+		return (
+			someString.toLowerCase().includes(stringToMatch.toLowerCase()) ||
+			stringToMatch.toLowerCase().includes(someString.toLowerCase())
+		);
+	}
 	const onSearch = (ev: CustomEvent<{ search: string }>) => {
 		const s = ev.detail.search;
 
@@ -21,7 +27,7 @@
 			return (
 				it.degree.toLowerCase().includes(s) ||
 				it.description.toLowerCase().includes(s) ||
-				it.location.toLowerCase().includes(s) ||
+				it.location.some((loc) => isSubstring(loc, s)) ||
 				it.name.toLowerCase().includes(s) ||
 				it.organization.toLowerCase().includes(s) ||
 				it.subjects.some((it) => it.toLowerCase().includes(s))
@@ -52,13 +58,13 @@
 						<UIcon icon="i-carbon-condition-point" />
 					</div>
 					<div class="col flex-1 items-stretch">
-						<Card>
-							<div class="flex-1 col gap-2 items-stretch">
+						<Card color={education.color}>
+							<div class="flex-1 col gap-1 items-stretch">
 								<img
 									src={getAssetURL(education.logo)}
 									alt={education.organization}
-									height="50"
-									width="50"
+									height="100"
+									width="100"
 									class="mb-5"
 								/>
 								<div class="text-[1.3em]">{education.degree}</div>

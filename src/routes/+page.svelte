@@ -72,7 +72,13 @@
 	<title>{useTitle(title, titleSuffix)}</title>
 </svelte:head>
 
-<div id="cta-container" class="relative z-10" />
+<div id="cta-container" class="relative z-10 absolute inset-0 flex justify-center items-center">
+	<div class="bg-black bg-opacity-25 p-2 rounded-md">
+		<span class="text-white md:flex-row md:self-stretch text-center p-0 md:p-4">
+			Verifying Your Humanity...
+		</span>
+	</div>
+</div>
 <div
 	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-10px"
 >
