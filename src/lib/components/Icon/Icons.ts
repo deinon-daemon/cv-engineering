@@ -5,5 +5,7 @@ export const viewBox = (icon: Icons) => {
 
 	if (icon === Icons.Facebook) return '0 0 408.788 408.788';
 
+	if (icon === Icons.Huggingface) return '0 0 32 32';
+
 	return [Icons.GitHub, Icons.Search, Icons.Code].includes(icon) ? '0 0 16 16' : '0 0 24 24';
 };

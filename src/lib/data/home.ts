@@ -1,14 +1,15 @@
 import { Platform } from '$lib/types';
 import { getSkills } from './skills';
 
-export const title = 'Benjamin Carsley - Fullstack Application Builder, Cloud DevOps Specialist, ML Engineer';
+export const title =
+	'Benjamin Carsley - Fullstack Application Builder, Cloud DevOps Specialist, ML Engineer';
 
 export const name = 'Benjamin';
 
 export const lastName = 'Carsley';
 
 export const description =
-'Fullstack Application Builder, Cloud DevOps Specialist, ML || AI Engineer'
+	'Fullstack Application Builder, Cloud DevOps & Infrastructure Specialist, ML || AI Engineer & Researcher';
 
 export const links: Array<{ platform: Platform; link: string }> = [
 	{ platform: Platform.GitHub, link: 'https://github.com/deinon-daemon' },
@@ -42,4 +43,4 @@ export const links: Array<{ platform: Platform; link: string }> = [
 	// }
 ];
 
-export const skills = getSkills('js', 'css', 'html', 'reactjs', 'sass', 'svelte', 'ts');
+export const skills = getSkills('js', 'css', 'html', 'reactjs', 'sass', 'svelte', 'ts', 'rust');

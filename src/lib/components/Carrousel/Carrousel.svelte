@@ -16,7 +16,7 @@
 	$: {
 		if (element) {
 			element.scroll({
-				left: index * 150,
+				left: index * 270,
 				behavior: 'smooth'
 			});
 		}
@@ -80,10 +80,10 @@
 		<UIcon icon="i-carbon-chevron-left" />
 	</button>
 
-	<div bind:this={element} class="row overflow-hidden box-content w-150px">
+	<div bind:this={element} class="row overflow-hidden box-content w-260px">
 		{#each items as item}
-			<div class="box-content w-150px p-15px col-center">
-				<img class="w-120px h-120px aspect-square" src={getAssetURL(item.logo)} alt={item.name} />
+			<div class="box-content w-260px p-15px col-center">
+				<img class="w-240px h-240px aspect-square" src={getAssetURL(item.logo)} alt={item.name} />
 				<span class="text-center m-t-20px">{item.name}</span>
 			</div>
 		{/each}
