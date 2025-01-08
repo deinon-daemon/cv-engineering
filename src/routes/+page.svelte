@@ -94,5 +94,5 @@
 			{/each}
 		</div>
 	</div>
-	<Carrousel items={skillsItems ?? skills} />
+	<Carrousel items={Array.from(skillsItems) ?? skills} />
 </div>

@@ -4,7 +4,8 @@ import type { Education } from '../types';
 export const items: Array<Education> = [
 	{
 		degree: 'Honors Bachelor of Arts in Linguistics',
-		description: 'Columbia University Linguistics, Honors Thesis on Language Documentation and Revitalization of txʷəlšucid and other Coastal Salish Languages',
+		description:
+			'Columbia University Linguistics, Honors Thesis on Language Documentation and Revitalization of txʷəlšucid and other Coastal Salish Languages',
 		location: ['New York City, NY', 'Seattle, WA'],
 		logo: Assets.Unknown,
 		name: 'BA of Linguistics, Columbia University',
@@ -28,7 +29,8 @@ export const items: Array<Education> = [
 	},
 	{
 		degree: 'Founding Engineer, Autodidacticism, On the Job Mentorship',
-		description: "Worked directly with Founder, Pava LaPere, to design and develop multiple fullstack applications by myself, and moreover, to establish and architect the organization's GitHub & Google Cloud Infrastructure",
+		description:
+			"Worked directly with Founder, Pava LaPere, to design and develop multiple fullstack applications by myself, and moreover, to establish and architect the organization's GitHub & Google Cloud Infrastructure",
 		location: ['New York City, NY', 'Baltimore, MD'],
 		logo: Assets.Unknown,
 		name: 'Founding Engineer, Autodidact in Cloud Software Engineering',
@@ -66,7 +68,7 @@ export const items: Array<Education> = [
 	},
 	{
 		degree: 'Freelance Web Developer, ML Engineering & Linguistic Consultancy',
-		description: "",
+		description: '',
 		location: ['New York City, NY'],
 		logo: Assets.Unknown,
 		name: 'Freelance Web Developer, ML Engineering & Linguistic Consultancy',
@@ -87,4 +89,4 @@ export const items: Array<Education> = [
 	}
 ];
 
-export const title = 'Education';
+export const title = 'Education & Experience';
