@@ -7,24 +7,10 @@
 
 <CommonPage {title}>
 	<div class="resume">
-		{#if data}
-			<a href={data} download>
-				<Chip size={'1.25em'}>Download</Chip>
-			</a>
-		{:else}
-			<Chip>Ooops! no CV at the moment.</Chip>
-		{/if}
+		<iframe
+			style="border: 0; width:100%; height: 500px; overflow: auto;"
+			title="benjamin carsley's resume"
+			src="https://docs.google.com/document/d/e/2PACX-1vTQUHQwPLGCI--wKhy9H0wPUJG_FEICgjdWNgu3AiNz3_iwM3_CAadvuQqaAi80D4_W0afb72RFksNV/pub?embedded=true">
+		</iframe>
 	</div>
 </CommonPage>
-
-<style lang="scss">
-	.resume {
-		display: flex;
-		justify-content: center;
-		margin-top: 20px;
-
-		& > a {
-			color: inherit;
-		}
-	}
-</style>
