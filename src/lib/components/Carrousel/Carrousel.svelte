@@ -3,6 +3,7 @@
 	import type { Skill } from '$lib/types';
 	import { getAssetURL } from '$lib/data/assets';
 	import UIcon from '../Icon/UIcon.svelte';
+	import { theme } from '$lib/stores/theme';
 
 	export let items: Array<Skill> = [];
 	const delay = 2000;
@@ -83,7 +84,11 @@
 	<div bind:this={element} class="row overflow-hidden box-content w-260px">
 		{#each items as item}
 			<div class="box-content w-260px p-15px col-center">
-				<img class="w-240px h-240px aspect-square" src={getAssetURL(item.logo)} alt={item.name} />
+				<img
+					class="w-240px h-240px aspect-square"
+					src={getAssetURL(item.logo, $theme)}
+					alt={item.name}
+				/>
 				<span class="text-center m-t-20px">{item.name}</span>
 			</div>
 		{/each}

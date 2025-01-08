@@ -1,5 +1,4 @@
 import type { Asset } from '$lib/types';
-import { theme } from '$lib/stores/theme';
 import { base } from '$app/paths';
 
 const gh = (file: string) => `${base}/logos/${file}`;
@@ -18,10 +17,10 @@ const Assets = {
 	Django: a('django.svg'),
 	Elixir: a('elixir.svg'),
 	FastApi: a('fastapi.svg'),
-	Flask: a('flask.svg'),
+	Flask: a('flask.svg', 'flask-dark.png'),
 	GCP: a('google.svg'),
 	Go: a('go.svg'),
-	Kafka: a('kafka.svg'),
+	Kafka: a('kafka.svg', 'kafka-dark.png'),
 	Linux: a('linux.svg'),
 	Neo4j: a('neo4j.svg'),
 	NextJS: a('nextjs.svg', 'nextjs-dark.svg'),
@@ -47,6 +46,9 @@ const Assets = {
 	Dart: a('dart.png'),
 	Kotlin: a('kotlin.png'),
 	Python: a('python.png'),
+	Puppeteer: a('puppeteer.svg'),
+	PyTorch: a('pytorch.svg'),
+	Transformers: a('huggingface.svg'),
 	NodeJs: a('node.png'),
 	Deno: a('deno.png', 'deno-dark.svg'),
 	Svelte: a('svelte.png'),
@@ -89,10 +91,12 @@ const Assets = {
 
 export default Assets;
 
-let currentTheme: boolean;
-
-theme.subscribe((v) => (currentTheme = v));
-
-export const getAssetURL = (asset: Asset): string => {
-	return typeof asset === 'string' ? asset : currentTheme ? asset.dark : asset.light;
+export const getAssetURL = (asset: Asset, currentTheme: boolean): string => {
+	if (typeof asset === 'string') {
+		return asset;
+	} else if (typeof asset.dark === 'string' && currentTheme) {
+		return asset.dark;
+	} else {
+		return asset.light;
+	}
 };

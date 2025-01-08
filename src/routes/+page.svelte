@@ -34,7 +34,7 @@
 			const container: HTMLElement | null = document.querySelector('div#cta-container');
 
 			const theme = document.querySelector('html')?.getAttribute('data-theme');
-			//console.log('Theme: ', theme);
+			// console.log('Theme: ', theme);
 			if (container && container?.style) {
 				container.style.background = `url(${gif}) center bottom`;
 				// lmao "https://media.giphy.com/media/839DsJwSJTIo5kG6D5/giphy.gif"

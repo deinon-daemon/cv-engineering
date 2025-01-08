@@ -3,6 +3,7 @@
 	import { getAssetURL } from '$lib/data/assets';
 	import { title } from '@data/experience';
 	import { getTimeDiff } from '$lib/utils';
+	import { theme } from '$lib/stores/theme';
 
 	import type { Experience } from '$lib/types';
 
@@ -30,7 +31,7 @@
 		</div>
 	{:else}
 		<div class="flex flex-col items-center overflow-x-hidden">
-			<Banner img={getAssetURL(data.experience.logo)}>
+			<Banner img={getAssetURL(data.experience.logo, $theme)}>
 				<div class="col-center p-y-20">
 					<div class="text-0.9em">
 						<MainTitle>{data.experience.name}</MainTitle>
@@ -61,7 +62,7 @@
 								href={`${base}/skills/${item.slug}`}
 							>
 								<CardLogo
-									src={getAssetURL(item.logo)}
+									src={getAssetURL(item.logo, $theme)}
 									alt={item.name}
 									radius={'0px'}
 									size={15}

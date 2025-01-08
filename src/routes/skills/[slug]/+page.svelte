@@ -2,6 +2,7 @@
 	import { title } from '@data/skills';
 	import * as projects from '@data/projects';
 	import * as experiences from '@data/experience';
+	import { theme } from '$lib/stores/theme';
 
 	import { base } from '$app/paths';
 	import { getAssetURL } from '$lib/data/assets';
@@ -39,7 +40,7 @@
 		projects.items.forEach((item) => {
 			if (item.skills.some((tech) => tech.slug === skill.slug)) {
 				out.push({
-					img: getAssetURL(item.logo),
+					img: getAssetURL(item.logo, $theme),
 					display: `${item.name} (${item.type})`,
 					name: item.name,
 					type: 'projects',
@@ -51,7 +52,7 @@
 		experiences.items.forEach((item) => {
 			if (item.skills.some((tech) => tech.slug === skill.slug)) {
 				out.push({
-					img: getAssetURL(item.logo),
+					img: getAssetURL(item.logo, $theme),
 					display: `${item.name} @ ${item.company}`,
 					name: item.name,
 					type: 'experience',
@@ -78,7 +79,7 @@
 		</div>
 	{:else}
 		<div class="flex flex-col items-center overflow-x-hidden">
-			<Banner img={getAssetURL(data.skill.logo)}>
+			<Banner img={getAssetURL(data.skill.logo, $theme)}>
 				<MainTitle>{data.skill.name}</MainTitle>
 			</Banner>
 			<div class="pt-3 pb-1 overflow-x-hidden w-full">
@@ -96,7 +97,7 @@
 			<div class="self-stretch mb-2">
 				<CardDivider />
 			</div>
-			<div class="flex flex-row gap-1 self-stretch flex-wrap ">
+			<div class="flex flex-row gap-1 self-stretch flex-wrap">
 				<div class="px-10px">
 					{#each related as item}
 						<Chip

@@ -11,6 +11,7 @@
 	import { getAssetURL } from '$lib/data/assets';
 	import { base } from '$app/paths';
 	import UIcon from '../Icon/UIcon.svelte';
+	import { theme } from '$lib/stores/theme';
 
 	export let project: Project;
 	$: months = countMonths(project.period.from, project.period.to);
@@ -27,7 +28,7 @@
 </script>
 
 <Card color={project.color} href={`${base}/projects/${project.slug}`}>
-	<CardLogo alt={project.name} src={getAssetURL(project.logo)} size={40} radius={'0'} />
+	<CardLogo alt={project.name} src={getAssetURL(project.logo, $theme)} size={40} radius={'0'} />
 	<div class="m-t-20px row justify-between items-center">
 		<CardTitle title={project.name} />
 		<div class="row">
@@ -64,7 +65,7 @@
 	<div class="row flex-wrap">
 		{#each project.skills as tech}
 			<ChipIcon
-				logo={getAssetURL(tech.logo)}
+				logo={getAssetURL(tech.logo, $theme)}
 				name={tech.name}
 				href={`${base}/skills/${tech.slug}`}
 			/>

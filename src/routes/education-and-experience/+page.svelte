@@ -4,6 +4,7 @@
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
 	import SearchPage from '$lib/components/SearchPage.svelte';
 	import { getAssetURL } from '$lib/data/assets';
+	import { theme } from '$lib/stores/theme';
 
 	import { title, items } from '@data/education';
 	import type { Education } from '$lib/types';
@@ -61,7 +62,7 @@
 						<Card color={education.color}>
 							<div class="flex-1 col gap-1 items-stretch">
 								<img
-									src={getAssetURL(education.logo)}
+									src={getAssetURL(education.logo, $theme)}
 									alt={education.organization}
 									height="100"
 									width="100"

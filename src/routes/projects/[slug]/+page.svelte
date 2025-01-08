@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import { getAssetURL } from '$lib/data/assets';
 	import { title } from '@data/projects';
+	import { theme } from '$lib/stores/theme';
 
 	import type { Project } from '$lib/types';
 
@@ -39,7 +40,7 @@
 		</div>
 	{:else}
 		<div class="flex flex-col items-center overflow-x-hidden">
-			<Banner img={getAssetURL(data.project.logo)}>
+			<Banner img={getAssetURL(data.project.logo, $theme)}>
 				<div class="col-center p-y-20">
 					<div class="text-0.9em">
 						<MainTitle>{data.project.name}</MainTitle>
@@ -65,7 +66,7 @@
 								href={`${base}/skills/${item.slug}`}
 							>
 								<CardLogo
-									src={getAssetURL(item.logo)}
+									src={getAssetURL(item.logo, $theme)}
 									alt={item.name}
 									radius={'0px'}
 									size={15}
@@ -93,7 +94,7 @@
 				</div>
 				{#if screenshots.length > 0}
 					<div
-						class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10 "
+						class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10"
 					>
 						{#each screenshots as item, index}
 							<!-- svelte-ignore a11y-no-static-element-interactions -->

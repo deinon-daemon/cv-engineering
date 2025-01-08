@@ -45,6 +45,33 @@ export const items = [
 		category: 'pro-lang'
 	}),
 	defineSkill({
+		slug: 'pytorch',
+		color: 'orange',
+		description:
+			'PyTorch is an open-source machine learning library for Python that provides a flexible and dynamic deep learning framework, widely used in research and production.',
+		logo: Assets.PyTorch,
+		name: 'PyTorch',
+		category: 'library'
+	}),
+	defineSkill({
+		slug: 'transformers',
+		color: 'green',
+		description:
+			'Transformers is a popular library built on top of PyTorch for natural language processing (NLP) tasks, offering pre-trained models like BERT, GPT, and more for text generation and understanding.',
+		logo: Assets.Transformers,
+		name: 'Transformers',
+		category: 'library'
+	}),
+	defineSkill({
+		slug: 'rust',
+		color: 'red',
+		description:
+			'Rust is a systems programming language focused on safety, speed, and concurrency, ideal for building reliable and efficient software with modern features.',
+		logo: Assets.Rust,
+		name: 'Rust',
+		category: 'pro-lang'
+	}),
+	defineSkill({
 		slug: 'ruby',
 		color: 'red',
 		description:
@@ -61,15 +88,6 @@ export const items = [
 		logo: Assets.RubyOnRails,
 		name: 'Ruby on Rails',
 		category: 'framework'
-	}),
-	defineSkill({
-		slug: 'elixir',
-		color: 'purple',
-		description:
-			'Elixir is a functional programming language designed for building scalable and maintainable applications, especially in the realm of distributed systems.',
-		logo: Assets.Elixir,
-		name: 'Elixir',
-		category: 'pro-lang'
 	}),
 	defineSkill({
 		slug: 'linux',
@@ -90,15 +108,6 @@ export const items = [
 		category: 'devops'
 	}),
 	defineSkill({
-		slug: 'azure',
-		color: 'blue',
-		description:
-			'Microsoft Azure is a cloud computing platform that offers a wide range of services for building, deploying, and managing applications and services through data centers worldwide.',
-		logo: Assets.Azure,
-		name: 'Azure',
-		category: 'devops'
-	}),
-	defineSkill({
 		slug: 'gcp',
 		color: 'blue',
 		description:
@@ -114,6 +123,15 @@ export const items = [
 			'Amazon Web Services (AWS) is a comprehensive cloud platform offering a multitude of services including computing power, storage, databases, machine learning, and more.',
 		logo: Assets.AWS,
 		name: 'AWS',
+		category: 'devops'
+	}),
+	defineSkill({
+		slug: 'azure',
+		color: 'blue',
+		description:
+			'Microsoft Azure is a cloud computing platform that offers a wide range of services for building, deploying, and managing applications and services through data centers worldwide.',
+		logo: Assets.Azure,
+		name: 'Azure',
 		category: 'devops'
 	}),
 	defineSkill({
@@ -144,6 +162,15 @@ export const items = [
 		category: 'framework'
 	}),
 	defineSkill({
+		slug: 'elixir',
+		color: 'purple',
+		description:
+			'Elixir is a functional programming language designed for building scalable and maintainable applications, especially in the realm of distributed systems.',
+		logo: Assets.Elixir,
+		name: 'Elixir',
+		category: 'pro-lang'
+	}),
+	defineSkill({
 		slug: 'phoenix',
 		color: 'red',
 		description:
@@ -152,6 +179,16 @@ export const items = [
 		name: 'Phoenix',
 		category: 'framework'
 	}),
+	defineSkill({
+		slug: 'puppeteer',
+		color: 'blue',
+		description:
+			'Puppeteer is a Node.js library for controlling headless Chrome or Chromium browsers, enabling automated testing, web scraping, and other web automation tasks.',
+		logo: Assets.Puppeteer,
+		name: 'Puppeteer',
+		category: 'library'
+	}),
+
 	defineSkill({
 		slug: 'airflow',
 		color: 'blue',
@@ -306,15 +343,6 @@ export const items = [
 		category: 'library'
 	}),
 	defineSkill({
-		slug: 'rust',
-		color: 'red',
-		description:
-			'Rust is a systems programming language focused on safety, speed, and concurrency, ideal for building reliable and efficient software with modern features.',
-		logo: Assets.Rust,
-		name: 'Rust',
-		category: 'pro-lang'
-	}),
-	defineSkill({
 		slug: 'scrapy',
 		color: 'blue',
 		description:
@@ -348,7 +376,7 @@ export const items = [
 			'Deno is a secure runtime for JavaScript and TypeScript that offers built-in utilities, security features, and a package manager to simplify development workflows.',
 		logo: Assets.Deno,
 		name: 'Deno',
-		category: 'pro-lang'
+		category: 'framework'
 	}),
 	defineSkill({
 		slug: 'svelte',
